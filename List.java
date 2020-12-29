@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public class List{
     public static void main(String[] args){
         ArrayList<Object> myList = new ArrayList<Object>();
@@ -6,16 +7,14 @@ public class List{
         myList.add("hello world");
         myList.add(48);
         myList.add("Goodbye World");
-        try {
-            for(int i = 0; i < myList.size(); i++) {
+        for(int i = 0; i < myList.size(); i++) {
+            try {
                 Integer castedValue = (Integer) myList.get(i);
-                System.out.println(i);
             }
+        
+            catch(ClassCastException e){
+                System.out.println(e.getMessage());
         }
-        catch(ClassCastException e){
-            System.out.println(e.getMessage());
-            
-
-        }
+    }
     }
 }
